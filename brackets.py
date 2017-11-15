@@ -1,22 +1,26 @@
 #https://www.hackerrank.com/challenges/ctci-balanced-brackets/problem
 
-#solution 1: O(n)
+#time: O(n)
+from sets import Set
 def is_matched(expression):
-    openDic = {'{': 1, '(':1, '[':1}
-    closeDic = {'}': 1, ')':1, ']':1}
-    mainDic = {'{}': 1, '()':1, '[]':1}
-    strStack = []
+    stack = []
+    lenExp = len(expression)
     for x in expression:
-        if(x in openDic):
-            strStack.append(x)
+        if x == '{':
+            stack.append('}')
+        elif x == '[':
+            stack.append(']')
+        elif x == '(':
+            stack.append(')')
         else:
-            temp = strStack[-1] + x
-            if temp in mainDic:
-                strStack.remove(strStack[-1])
-                pass
+            if stack != []: 
+                if stack[-1] == x:
+                    stack.pop()
+                else:
+                    return False
             else:
                 return False
-    if strStack == []:
+    if stack == []:
         return True
     else:
         return False
