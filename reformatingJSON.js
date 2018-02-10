@@ -1,3 +1,4 @@
+// data given
 var response = {
   "UK": [
     {
@@ -36,7 +37,9 @@ var response = {
   ]
 }
 
-
+//parse the regions into cities
+//skips the key value pairs if data is invalid or empty
+// verifies the float values of longitude and latitude
 function parseCities(response){
   var result = [];
   if (response){
