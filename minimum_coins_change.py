@@ -1,3 +1,7 @@
+# given 3 coins (1,3,5) 
+# find the minimum number of coins required to make N dollars
+# For N = 19, result: 5
+
 def getMinCoins(total):
   curTotal = 0
   coins = [1,3,5]
