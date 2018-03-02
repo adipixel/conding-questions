@@ -1,3 +1,5 @@
+# prime number
+
 from math import sqrt 
 
 def isPrime(p):
