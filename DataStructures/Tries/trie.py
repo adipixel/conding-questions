@@ -55,7 +55,7 @@ class Trie:
 
 # driver function
 def main():
-    t = Trie()1
+    t = Trie()
     t.addWord("tree")
     t.addWord("trie")
     t.addWord("algo")
