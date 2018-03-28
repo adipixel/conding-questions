@@ -6,7 +6,7 @@
 #         self.right = None
 
 class Solution:
-    def buildTree(self, preorder, inorder):
+    def reconstructTree(self, preorder, inorder):
         """
         :type preorder: List[int]
         :type inorder: List[int]
