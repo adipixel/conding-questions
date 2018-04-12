@@ -77,6 +77,6 @@ def main():
   print("Pre Order: "),
   print(preOrder)
   #print(bst.preOrder_recursive())
-  print(bst.postOrder_recursive())
+  #print(bst.postOrder_recursive())
 
 main()
