@@ -62,21 +62,50 @@ class BST:
     postOrder_helper(node)
     return result
   
-  
+  def rebuild_using_preOrder(self, preorder):
+    def rebuilder(lower_bound, upper_bound):
+      if root_index[0] == len(preorder):
+        return None
+      root_data = preorder[root_index[0]]
+      if not lower_bound <= root_data <= upper_bound:
+        return None
+      
+      root_index[0] += 1
+      
+      newNode = Node(root_data)
+      newNode.left = rebuilder(lower_bound, root_data)
+      newNode.right = rebuilder(root_data, upper_bound)
+      return newNode
+
+
+    root_index = [0]
+    rootNode = rebuilder(float('-inf'), float('inf'))
+    self.root = rootNode
+    return rootNode
 
   
 def main():
-  root = Node(43)
+  root = Node(5)
   bst = BST(root)
   #arr = [3,2,7,8,4,6]
-  arr = [23,37,29,31,41,47,53]
+  arr = [3,2,1,4,7,8,6,9]
   for x in (arr):
     bst.insert(Node(x))
     
   preOrder =  bst.preOrder_iterative()
   print("Pre Order: "),
   print(preOrder)
+  
+  print("Post Order: "),
+  print(bst.postOrder_recursive())
+  
+  bst.rebuild_using_preOrder(preOrder)
+  
+  print("Pre Order: "),
+  print(bst.preOrder_iterative())
+  
   #print(bst.preOrder_recursive())
-  #print(bst.postOrder_recursive())
+  print("Post Order: "),
+  print(bst.postOrder_recursive())
 
 main()
