@@ -25,5 +25,7 @@ def has_two_sum(A, t, i):
 
 def main():
   print(has_three_sum([11,2,5,7,3], 21))
+  print(has_three_sum([11,2,5,7,3], 500))
+  print(has_three_sum([], 21))
 
 main()
