@@ -11,9 +11,11 @@ var removeDuplicates = function(nums) {
             while( ptr<nums.length && nums[ptr] == nums[ptr-1]){
                 ptr +=1
             }
+            if(ptr>=nums.length){
+                break
+            }
             
             nums[rpr]=nums[ptr]
-            ptr +=1
             rpr +=1
         }
         else{
