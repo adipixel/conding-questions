@@ -14,14 +14,10 @@ var removeDuplicates = function(nums) {
             if(ptr>=nums.length){
                 break
             }
-            
-            nums[rpr]=nums[ptr]
-            rpr +=1
         }
-        else{
+        nums[rpr]=nums[ptr]
+            rpr +=1
             ptr +=1
-            rpr +=1
-        }
     }
     nums.length = rpr
     //console.log(nums)
