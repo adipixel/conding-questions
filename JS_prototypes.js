@@ -1,3 +1,5 @@
+# Javascript Prototype Demonstration
+
 const Food = function(){};
 Food.prototype.eat = function(){
 	return('I ate food');
