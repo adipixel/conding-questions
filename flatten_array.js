@@ -3,7 +3,7 @@ var arr = [1,2,3,[1,2,3,4, [2,3,4]]];
 function flattenRecursive(arr){
 	var res = arr.reduce((acc, val)=>{
   	if(Array.isArray(val)){
-    	return acc.concat(flatten(val))
+    	return acc.concat(flattenRecursive(val))
     }
     else{
     	return acc.concat([val])
